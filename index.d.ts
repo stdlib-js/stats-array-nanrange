@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,27 +16,32 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { NumericArray, Collection, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
-* Compute the range of an array, ignoring `NaN` values.
+* Input array.
+*/
+type InputArray = NumericArray | Collection<number> | AccessorArrayLike<number>;
+
+/**
+* Computes the range of an array, ignoring `NaN` values.
 *
-* @module @stdlib/stats-array-nanrange
+* @param x - input array
+* @returns range
 *
 * @example
-* var nanrange = require( '@stdlib/stats-array-nanrange' );
-*
 * var x = [ 1.0, -2.0, NaN, 2.0 ];
 *
 * var v = nanrange( x );
 * // returns 4.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function nanrange( x: InputArray ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = nanrange;
